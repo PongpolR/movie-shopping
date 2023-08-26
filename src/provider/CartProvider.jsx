@@ -21,10 +21,26 @@ export default function CartProvider({ children }) {
   }, [cart]);
 
   function addToCart(product) {
-    setCart((prevCart) => ({
-      ...prevCart,
-      items: [...prevCart.items, product],
-    }));
+    console.log(product);
+    console.log(cart.items);
+    let check = 0;
+
+    if (cart.items.length > 0) {
+      cart.items.filter((item) => {
+        if (item.id === product.id) check = 1;
+        return cart;
+      });
+    }
+
+    if (check == 1) {
+      alert("This movie in cart!");
+    } else if (check == 0) {
+      setCart((prevCart) => ({
+        ...prevCart,
+        items: [...prevCart.items, product],
+      }));
+    }
+
     // localStorage.setItem("cart", JSON.stringify(cart));
   }
 

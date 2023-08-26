@@ -26,7 +26,6 @@ function App() {
           element={
             <CartProvider>
               <Header />
-
               <Data />
             </CartProvider>
           }
