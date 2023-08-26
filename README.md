@@ -8,8 +8,8 @@ Install project with npm
 
 ```bash
   git clone https://github.com/PongpolR/movie-shopping.git
-  npm install
-  cd my-project
+  cd movie-shopping
+  npm install (หรือ npm install --force)
 ```
 
 Run project
