@@ -6,7 +6,7 @@ import { render } from "react-dom";
 export default function Item(props) {
   const { movie } = props;
   const { cartAction } = useCartContext();
-  console.log(movie);
+  // console.log(movie);
 
   return (
     <div className="movie-item">

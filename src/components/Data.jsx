@@ -18,25 +18,33 @@ export default function Data() {
       "https://api.themoviedb.org/3/search/movie?api_key=ac70bed77550b024ac4d0cd98fa1df92&query=a"
     );
     let data = response.data;
+    let resultData = data.results;
+
+    let setPriceData = setPrice(resultData);
+    console.log(setPriceData);
+
     setMovie(data.results);
-    // localStorage.setItem("movie", JSON.stringify(movie));
+    setMovie(setPriceData);
+    localStorage.setItem("movie", JSON.stringify(movie));
     // console.log(movie);
-    setPrice();
+    // setPrice();
   }
 
-  function setPrice() {
-    let objWithPrice = movie.map((item, id) => {
+  function setPrice(obj) {
+    let objWithPrice = obj.map((item, id) => {
       item = {
         ...item,
         price: priceItem[id].price,
       };
       return item;
     });
-    setMovie(objWithPrice);
+    // setMovie(objWithPrice);
+    return objWithPrice;
   }
 
   useEffect(() => {
     fetchData();
+    console.log("t");
     localStorage.setItem("movie", JSON.stringify(movie));
   }, []);
 
