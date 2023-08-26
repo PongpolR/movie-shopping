@@ -7,8 +7,35 @@ import QRcode from "./QRcode";
 export default function PopUpBill(props) {
   const { text, price } = props;
   return (
-    <Popup trigger={<button className="button"> {text} </button>} modal nested>
-      {(close) => (
+    <Popup
+      contentStyle={{ width: "450px" }}
+      trigger={<button className="button"> {text} </button>}
+      modal
+      nested
+    >
+      <div className="modal">
+        <button className="close" onClick={close}>
+          &times;
+        </button>
+        <div className="header">Purchase</div>
+        <div className="content">
+          <Timer />
+          <p>ราคารวม: {price} baht</p>
+          <QRcode price={price} />
+        </div>
+        <div className="actions">
+          <button
+            className="button-action"
+            onClick={() => {
+              console.log("modal closed ");
+              close();
+            }}
+          >
+            close modal
+          </button>
+        </div>
+      </div>
+      {/* {(close) => (
         <div className="modal">
           <button className="close" onClick={close}>
             &times;
@@ -21,7 +48,7 @@ export default function PopUpBill(props) {
           </div>
           <div className="actions">
             <button
-              className="button"
+              className="button-action"
               onClick={() => {
                 console.log("modal closed ");
                 close();
@@ -31,7 +58,7 @@ export default function PopUpBill(props) {
             </button>
           </div>
         </div>
-      )}
+      )} */}
     </Popup>
   );
 }
