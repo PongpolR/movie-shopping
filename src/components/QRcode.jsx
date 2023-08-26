@@ -20,7 +20,7 @@ export default function QRcode(props) {
     <div className="app">
       {dataUrl && (
         <div className="generated-view">
-          <img src={dataUrl} alt="qr code" />
+          <img src={dataUrl} style={{ width: "200px" }} alt="qr code" />
           <a href={dataUrl} />
         </div>
       )}

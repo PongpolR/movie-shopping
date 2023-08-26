@@ -40,7 +40,7 @@ export default function CartPurchase() {
                       }
                       alt="img"
                     />
-                    <p>{item.title}</p>
+                    <p className="name">{item.title}</p>
                   </div>
 
                   <p>{item.price} baht</p>
@@ -51,30 +51,48 @@ export default function CartPurchase() {
 
         {numberItem > 0 && numberItem <= 3 && (
           <>
-            <p>total: {total} baht</p>
-            <PopUpBill text={"Purchase"} price={total} />
+            <div className="total">total: {total} baht</div>
+
+            <div className="purchase-btn">
+              <div className="clear">
+                <button onClick={() => cartAction.clearCart()}>Clear</button>
+              </div>
+              <PopUpBill text={"Purchase"} price={total} />
+            </div>
           </>
         )}
         {numberItem > 3 && numberItem <= 5 && (
           <>
-            <p>total: {total} baht</p>
-            <p>ลด 10% เหลือ {total - (total * 10) / 100} baht</p>
-            <PopUpBill text={"Purchase"} price={total - (total * 10) / 100} />
+            <div className="total">total: {total} baht</div>
+            <p className="discount">
+              10% discount: {total - (total * 10) / 100} baht
+            </p>
+
+            <div className="purchase-btn">
+              <div className="clear">
+                <button onClick={() => cartAction.clearCart()}>Clear</button>
+              </div>
+              <PopUpBill text={"Purchase"} price={total - (total * 10) / 100} />
+            </div>
           </>
         )}
         {numberItem > 5 && (
           <>
-            <p>total: {total} baht</p>
-            <p>ลด 20% เหลือ {total - (total * 20) / 100} baht</p>
-            <PopUpBill text={"Purchase"} price={total - (total * 20) / 100} />
+            <div className="total">total: {total} baht</div>
+            <p className="discount">
+              20% discount: {total - (total * 20) / 100} baht
+            </p>
+
+            <div className="purchase-btn">
+              <div className="clear">
+                <button onClick={() => cartAction.clearCart()}>Clear</button>
+              </div>
+              <PopUpBill text={"Purchase"} price={total - (total * 20) / 100} />
+            </div>
           </>
         )}
 
-        {numberItem > 0 ? (
-          <button onClick={() => cartAction.clearCart()}>Clear</button>
-        ) : (
-          <div className="no-item">ไม่มีสินค้าในตะกร้า</div>
-        )}
+        {numberItem == 0 && <div className="no-item">ไม่มีสินค้าในตะกร้า</div>}
       </div>
     </>
   );

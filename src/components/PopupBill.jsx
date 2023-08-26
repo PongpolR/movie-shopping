@@ -9,7 +9,7 @@ export default function PopUpBill(props) {
   return (
     <Popup
       contentStyle={{ width: "450px" }}
-      trigger={<button className="button"> {text} </button>}
+      trigger={<button>{text}</button>}
       modal
       nested
     >
@@ -29,10 +29,13 @@ export default function PopUpBill(props) {
           <button className="close" onClick={close}>
             &times;
           </button>
-          <div className="header">Purchase</div>
+          <div className="header">
+            <p>Purchase</p>
+            <p style={{ fontWeight: "500" }}>(mobile banking)</p>
+          </div>
           <div className="content">
             <p>กรุณาชำระเงินภายในเวลาที่กำหนด</p>
-            <p>กรณีลูกค้าต้องการซื้อสินค้าต่อ กดปิด popup</p>
+            <p>กรณีลูกค้าต้องการซื้อสินค้าต่อ กดปิดหน้าต่างนี้</p>
             <p>หากหมดเวลาชำระเงินระบบจะเคลียร์ตะกร้าอัตโนมัติ</p>
             <Timer />
             <p>ราคารวม: {price} baht</p>

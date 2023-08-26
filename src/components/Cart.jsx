@@ -4,6 +4,7 @@ import { useCartContext } from "../provider/CartProvider";
 import Badge from "@material-ui/core/Badge";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { Link } from "react-router-dom";
+import "../styles/Cart.css";
 
 export default function Cart() {
   const { cart } = useCartContext();

@@ -1,27 +1,7 @@
-.badge {
-  padding-left: 9px;
-  padding-right: 9px;
-  -webkit-border-radius: 9px;
-  -moz-border-radius: 9px;
-  border-radius: 9px;
-}
-
-.label-warning[href],
-.badge-warning[href] {
-  background-color: #c67605;
-}
-#lblCartCount {
-  font-size: 12px;
-  background: #ff0000;
-  color: #fff;
-  padding: 0 5px;
-  vertical-align: top;
-  margin-left: -10px;
-}
-
 .container {
   max-width: 1440px;
   margin: 0 auto;
+  margin-bottom: 1rem;
 }
 
 .title-cart {
@@ -53,4 +33,69 @@
 
 .no-item {
   text-align: center;
+}
+
+.name {
+  margin-left: 1rem;
+}
+
+svg:hover {
+  color: #acaa16;
+}
+
+.total {
+  display: flex;
+  justify-content: right;
+}
+
+.discount {
+  display: flex;
+  justify-content: end;
+}
+
+.purchase-btn {
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.clear {
+  display: flex;
+  justify-content: left;
+}
+
+.purchase-btn button {
+  font-weight: 500;
+  background-color: #36317f;
+  color: white;
+  padding: 0.7rem 1rem;
+  justify-content: end;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin: 0.5rem 0;
+}
+
+.purchase-btn button:hover {
+  font-weight: 500;
+  color: black;
+  background-color: #e5e219;
+}
+
+.clear button {
+  font-weight: 500;
+  background-color: #eee;
+  color: black;
+  padding: 0.7rem 1rem;
+  justify-content: end;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin: 0.5rem 0;
+}
+
+.clear button:hover {
+  font-weight: 500;
+  color: #eee;
+  background-color: #e02b13;
 }

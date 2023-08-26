@@ -12,10 +12,10 @@ export default function SearchForm(props) {
         onChange={(e) => setSearch(e.target.value)}
       />
       <button type="submit" className="submit-btn">
-        Submit
+        Search
       </button>
       <button onClick={refresh} className="refresh-btn">
-        Refresh
+        Clear
       </button>
     </form>
   );

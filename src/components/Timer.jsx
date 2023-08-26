@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useCartContext } from "../provider/CartProvider";
 
 export default function Timer() {
-  const [time, setTime] = useState(10); // 60sec
+  const [time, setTime] = useState(60); // 60sec
   const { cartAction } = useCartContext();
 
   useEffect(() => {
@@ -31,10 +31,7 @@ export default function Timer() {
   };
   return (
     <div>
-      <p>
-        {/* {time != 0 ? formatTime(time) : "หมดเวลาสั่งซื้อ กรุณาทำรายการใหม่"} */}
-        {formatTime(time)}
-      </p>
+      <h1 style={{ margin: "8px 0" }}>{formatTime(time)}</h1>
     </div>
   );
 }
