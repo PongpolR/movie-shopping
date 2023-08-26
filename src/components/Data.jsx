@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import price from "../data/price";
 import SearchForm from "./SearchForm";
+import Item from "./Item";
 
 export default function Data() {
   const [movie, setMovie] = useState(
@@ -9,7 +10,7 @@ export default function Data() {
   );
   const [searchMovie, setSearchMovie] = useState([]);
   const [search, setSearch] = useState("");
-  const [priceItem, setPriceItem] = useState(price);
+  const [priceItem] = useState(price);
   async function fetchData() {
     let response = await axios(
       "https://api.themoviedb.org/3/search/movie?api_key=ac70bed77550b024ac4d0cd98fa1df92&query=a"
@@ -22,7 +23,6 @@ export default function Data() {
   }
 
   function setPrice() {
-    console.log(priceItem);
     let objWithPrice = movie.map((item, id) => {
       item = {
         ...item,
@@ -64,7 +64,7 @@ export default function Data() {
       {searchMovie.map((item) => {
         return (
           <div key={item.id}>
-            {item.title} {item.price}
+            <Item movie={item} />
           </div>
         );
       })}
@@ -73,7 +73,7 @@ export default function Data() {
         movie.map((item) => {
           return (
             <div key={item.id}>
-              {item.title} {item.price}
+              <Item movie={item} />
             </div>
           );
         })}
