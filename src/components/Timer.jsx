@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useCartContext } from "../provider/CartProvider";
 
 export default function Timer() {
-  const [time, setTime] = useState(333); // 60sec
+  const [time, setTime] = useState(10); // 60sec
   const { cartAction } = useCartContext();
 
   useEffect(() => {

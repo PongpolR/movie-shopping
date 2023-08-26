@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import price from "../data/price";
 import SearchForm from "./SearchForm";
 import Item from "./Item";
+import "../styles/Data.css";
 
 export default function Data() {
   const [movie, setMovie] = useState(
@@ -54,30 +55,36 @@ export default function Data() {
   }
 
   return (
-    <>
-      <SearchForm
-        submitSearch={submitSearch}
-        search={search}
-        setSearch={setSearch}
-        refresh={refresh}
-      />
+    <div className="container">
+      <div className="searchForm">
+        <SearchForm
+          submitSearch={submitSearch}
+          search={search}
+          setSearch={setSearch}
+          refresh={refresh}
+        />
+      </div>
 
-      {searchMovie.map((item) => {
-        return (
-          <div key={item.id}>
-            <Item movie={item} />
-          </div>
-        );
-      })}
-
-      {searchMovie == 0 &&
-        movie.map((item) => {
+      <div className="grid">
+        {searchMovie.map((item) => {
           return (
-            <div key={item.id}>
+            <div key={item.id} className="item">
               <Item movie={item} />
             </div>
           );
         })}
-    </>
+      </div>
+
+      <div className="grid">
+        {searchMovie == 0 &&
+          movie.map((item) => {
+            return (
+              <div key={item.id} className="item">
+                <Item movie={item} />
+              </div>
+            );
+          })}
+      </div>
+    </div>
   );
 }

@@ -1,0 +1,31 @@
+.movie-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.add-btn {
+  font-weight: 700;
+  background-color: #e5e219;
+  color: #191739;
+  padding: 0.7rem 1rem;
+  justify-content: end;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.add-btn:hover {
+  background-color: #a9a612;
+}
+
+img {
+  width: 100px;
+}

@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useEffect, useState } from "react";
+import { useAlert } from "react-alert";
 
 const CartContext = createContext({});
 
@@ -15,6 +16,7 @@ export default function CartProvider({ children }) {
   const [cart, setCart] = useState(
     JSON.parse(localStorage.getItem("cart")) || initialCart
   );
+  const alert = useAlert();
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -33,12 +35,13 @@ export default function CartProvider({ children }) {
     }
 
     if (check == 1) {
-      alert("This movie in cart!");
+      alert.error("Already in cart");
     } else if (check == 0) {
       setCart((prevCart) => ({
         ...prevCart,
         items: [...prevCart.items, product],
       }));
+      alert.success("Add to cart");
     }
 
     // localStorage.setItem("cart", JSON.stringify(cart));

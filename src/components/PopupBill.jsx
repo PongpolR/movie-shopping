@@ -13,7 +13,7 @@ export default function PopUpBill(props) {
       modal
       nested
     >
-      <div className="modal">
+      {/* <div className="modal">
         <button className="close" onClick={close}>
           &times;
         </button>
@@ -23,30 +23,22 @@ export default function PopUpBill(props) {
           <p>ราคารวม: {price} baht</p>
           <QRcode price={price} />
         </div>
-        <div className="actions">
-          <button
-            className="button-action"
-            onClick={() => {
-              console.log("modal closed ");
-              close();
-            }}
-          >
-            close modal
-          </button>
-        </div>
-      </div>
-      {/* {(close) => (
+      </div> */}
+      {(close) => (
         <div className="modal">
           <button className="close" onClick={close}>
             &times;
           </button>
           <div className="header">Purchase</div>
           <div className="content">
+            <p>กรุณาชำระเงินภายในเวลาที่กำหนด</p>
+            <p>กรณีลูกค้าต้องการซื้อสินค้าต่อ กดปิด popup</p>
+            <p>หากหมดเวลาชำระเงินระบบจะเคลียร์ตะกร้าอัตโนมัติ</p>
             <Timer />
             <p>ราคารวม: {price} baht</p>
             <QRcode price={price} />
           </div>
-          <div className="actions">
+          {/* <div className="actions">
             <button
               className="button-action"
               onClick={() => {
@@ -56,9 +48,9 @@ export default function PopUpBill(props) {
             >
               close modal
             </button>
-          </div>
+          </div> */}
         </div>
-      )} */}
+      )}
     </Popup>
   );
 }

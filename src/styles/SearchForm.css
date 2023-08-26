@@ -1,0 +1,22 @@
+.title-search {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.text-input {
+  height: 30px;
+  width: 500px;
+  margin-right: 0.3rem;
+  font-size: 16px;
+}
+
+.text-input:focus {
+  outline: none;
+}
+
+.submit-btn,
+.refresh-btn {
+  /* height: 30px; */
+  margin: 0 0.3rem;
+  padding: 0.3rem;
+}

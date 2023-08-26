@@ -1,5 +1,5 @@
 header {
-  background-color: #191739;
+  background-color: #e5eff7;
   display: flex;
   justify-content: space-between;
   padding: 1rem;
@@ -10,7 +10,7 @@ a {
 }
 
 h1 {
-  color: #e5eff7;
+  color: #191739;
 }
 
 .cart {
