@@ -2,6 +2,8 @@
 
 Web application สำหรับซื้อภาพยนตร์
 
+(เขียนด้วยภาษา javascript โดยใช้ library react)
+
 ## Installation
 
 Install project with npm
