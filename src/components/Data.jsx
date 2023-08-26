@@ -11,6 +11,7 @@ export default function Data() {
   const [searchMovie, setSearchMovie] = useState([]);
   const [search, setSearch] = useState("");
   const [priceItem] = useState(price);
+  const [cartNumber, setCartNumber] = useState(0);
   async function fetchData() {
     let response = await axios(
       "https://api.themoviedb.org/3/search/movie?api_key=ac70bed77550b024ac4d0cd98fa1df92&query=a"
