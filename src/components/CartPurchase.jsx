@@ -38,7 +38,7 @@ export default function CartPurchase() {
                       src={
                         "http://image.tmdb.org/t/p/w500/" + item.backdrop_path
                       }
-                      alt="img"
+                      alt={item.title}
                     />
                     <p className="name">{item.title}</p>
                   </div>

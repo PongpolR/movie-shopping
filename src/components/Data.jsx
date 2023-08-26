@@ -42,8 +42,9 @@ export default function Data() {
 
   function submitSearch(e) {
     e.preventDefault();
-    const result = movie.filter((item) =>
-      item.title.toLowerCase().includes(search)
+    const result = movie.filter(
+      (item) =>
+        item.title.toLowerCase().includes(search) || item.title == search
     );
     setSearch("");
     setSearchMovie(result);
