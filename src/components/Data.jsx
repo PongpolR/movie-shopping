@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import price from "../data/price";
+import SearchForm from "./SearchForm";
 
 export default function Data() {
   const [movie, setMovie] = useState(
@@ -37,7 +38,7 @@ export default function Data() {
     localStorage.setItem("movie", JSON.stringify(movie));
   }, []);
 
-  function test(e) {
+  function submitSearch(e) {
     e.preventDefault();
     const result = movie.filter((item) =>
       item.title.toLowerCase().includes(search)
@@ -53,15 +54,12 @@ export default function Data() {
 
   return (
     <>
-      <form onSubmit={test}>
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <button type="submit">Submit</button>
-        <button onClick={refresh}>Refresh</button>
-      </form>
+      <SearchForm
+        submitSearch={submitSearch}
+        search={search}
+        setSearch={setSearch}
+        refresh={refresh}
+      />
 
       {searchMovie.map((item) => {
         return (
